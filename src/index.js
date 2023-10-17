@@ -36,7 +36,7 @@ function AlbumList() {
 
 function Album({ album, artist, rank, image, apple }) {
   return (
-    <div className="row">
+    <li className="row">
       <img
         className="album-cover"
         src={
@@ -46,7 +46,8 @@ function Album({ album, artist, rank, image, apple }) {
         }
         alt="t"
       />
-      <span className="container">
+      <div className="container">
+        <div className="rank">{rank}</div>
         <div className="album-title">{album}</div>
         <div className="artist">{artist}</div>
         {/* {apple && (
@@ -54,8 +55,7 @@ function Album({ album, artist, rank, image, apple }) {
             <img src={applemusicbtn} width={100} alt="apple" />
           </a>
         )} */}
-      </span>
-      <span className="rank">{rank}</span>
-    </div>
+      </div>
+    </li>
   );
 }
