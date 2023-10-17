@@ -1,0 +1,52 @@
+html {
+  width: 100%;
+}
+
+.row {
+  margin: 15px;
+  background-color: rgb(100, 158, 158);
+  /* height: 130px; */
+  /* width: 50%; */
+  /* padding: 0px; */
+}
+
+.album-cover {
+  /* padding-top: 20px; */
+  width: 100px;
+  display: inline-block;
+}
+
+.container {
+  display: inline-block;
+}
+
+.rank {
+  color: black;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: bold;
+  font-size: 2em;
+  float: right;
+  padding-top: 35px;
+  /* position: absolute; */
+}
+
+.apple-music-link {
+  /* position: absolute;
+  margin-top: 50px; */
+}
+
+.album-title {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+  position: relative;
+  top: -50px;
+  left: 20px;
+}
+
+.artist {
+  position: relative;
+  left: 20px;
+  top: -50px;
+  /* margin-top: 50px; */
+}

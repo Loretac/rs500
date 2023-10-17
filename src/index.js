@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import applemusicbtn from "./applemusicbtn.png"; // Tell webpack this JS file uses this image
+import "./styles.css";
 
 // https://csvjson.com/csv2json
 
@@ -35,22 +36,26 @@ function AlbumList() {
 
 function Album({ album, artist, rank, image, apple }) {
   return (
-    <div>
+    <div className="row">
       <img
+        className="album-cover"
         src={
           image
             ? image
             : "https://play-lh.googleusercontent.com/IeNJWoKYx1waOhfWF6TiuSiWBLfqLb18lmZYXSgsH1fvb8v1IYiZr5aYWe0Gxu-pVZX3"
         }
-        width={100}
         alt="t"
       />
-      {rank}, {album}, {artist}
-      {apple && (
-        <a href={apple}>
-          <img src={applemusicbtn} width={100} alt="apple" />
-        </a>
-      )}
+      <span className="container">
+        <div className="album-title">{album}</div>
+        <div className="artist">{artist}</div>
+        {/* {apple && (
+          <a className="apple-music-link" href={apple}>
+            <img src={applemusicbtn} width={100} alt="apple" />
+          </a>
+        )} */}
+      </span>
+      <span className="rank">{rank}</span>
     </div>
   );
 }
