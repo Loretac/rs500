@@ -13,7 +13,7 @@ root.render(<App />);
 
 function AlbumList() {
   var data = require("./rs500.json");
-  console.log(data);
+  // console.log(data);
 
   return (
     <div>
