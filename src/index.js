@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import applemusicbtn from "./applemusicbtn.png"; // Tell webpack this JS file uses this image
 
 // https://csvjson.com/csv2json
 
@@ -24,6 +25,7 @@ function AlbumList() {
             rank={row.Rank}
             image={row["Image Link"]}
             key={row.Rank}
+            apple={row["Apple Music Link"]}
           />
         ))}
       </ul>
@@ -31,7 +33,7 @@ function AlbumList() {
   );
 }
 
-function Album({ album, artist, rank, image }) {
+function Album({ album, artist, rank, image, apple }) {
   return (
     <div>
       <img
@@ -44,6 +46,11 @@ function Album({ album, artist, rank, image }) {
         alt="t"
       />
       {rank}, {album}, {artist}
+      {apple && (
+        <a href={apple}>
+          <img src={applemusicbtn} width={100} alt="apple" />
+        </a>
+      )}
     </div>
   );
 }
