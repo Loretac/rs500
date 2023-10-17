@@ -13,6 +13,7 @@ ul {
   /* height: 130px; */
   /* width: 50%; */
   /* padding: 0px; */
+  border-bottom: 1px solid lightgray;
 }
 
 .album-cover {
