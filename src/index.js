@@ -50,11 +50,11 @@ function Album({ album, artist, rank, image, apple }) {
         <div className="rank">{rank}</div>
         <div className="album-title">{album}</div>
         <div className="artist">{artist}</div>
-        {/* {apple && (
+        {apple && (
           <a className="apple-music-link" href={apple}>
-            <img src={applemusicbtn} width={100} alt="apple" />
+            <img className="apple-music-btn" src={applemusicbtn} alt="apple" />
           </a>
-        )} */}
+        )}
       </div>
     </li>
   );

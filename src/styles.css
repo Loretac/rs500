@@ -4,11 +4,12 @@ html {
 
 ul {
   padding-inline-start: 0px;
+  list-style-type: none;
 }
 
 .row {
   margin: 15px;
-  background-color: rgb(100, 158, 158);
+  /* background-color: rgb(100, 158, 158); */
   /* height: 130px; */
   /* width: 50%; */
   /* padding: 0px; */
@@ -18,12 +19,13 @@ ul {
   /* padding-top: 20px; */
   width: 100px;
   display: inline-block;
+  border-radius: 5%;
 }
 
 .container {
   position: relative;
   display: inline-block;
-  padding: 8px;
+  padding: 0px 0px 8px 8px;
   max-width: 60%;
   /* top: 0px; */
   vertical-align: top;
@@ -42,8 +44,17 @@ ul {
 }
 
 .apple-music-link {
+  /* display: block; */
+  /* height: 30px; */
   /* position: absolute;
   margin-top: 50px; */
+}
+
+.apple-music-btn {
+  /* position: relative; */
+  /* width: 80px; */
+  padding-top: 10px;
+  height: 30px;
 }
 
 .album-title {
