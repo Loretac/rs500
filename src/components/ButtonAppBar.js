@@ -80,9 +80,6 @@ function SelectSmall({ handleSortChange, sortBy }) {
         label="Sort"
         onChange={handleSortChange}
       >
-        <MenuItem value="">
-          <em>None</em>
-        </MenuItem>
         <MenuItem value="rank-a">Rank (Ascending)</MenuItem>
         <MenuItem value="rank-d">Rank (Descending)</MenuItem>
         <MenuItem value="year-a">Year (Ascending)</MenuItem>

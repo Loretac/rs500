@@ -3,15 +3,13 @@ import AlbumList from "./AlbumList";
 import ButtonAppBar from "./ButtonAppBar";
 
 // https://csvjson.com/csv2json
+
 export function App() {
   var data = require("../data/rs500.json");
-  // var sortedData = data;
+  data = data.sort((a, b) => a.Rank - b.Rank);
 
-  const [sortBy, setSortBy] = useState("");
-
+  const [sortBy, setSortBy] = useState("rank-d");
   const [sortedData, setSortedData] = useState(data);
-
-  // function handleSortChange() {}
 
   const handleSortChange = (event) => {
     setSortBy(event.target.value);
@@ -38,7 +36,9 @@ export function App() {
         );
         break;
       default:
-        setSortedData((sortedData) => sortedData);
+        setSortedData((sortedData) =>
+          sortedData.sort((a, b) => a.Rank - b.Rank)
+        );
     }
   };
 
