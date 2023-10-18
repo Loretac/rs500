@@ -1,7 +1,7 @@
 import Album from "./Album";
 
 export default function AlbumList() {
-  var data = require("../rs500.json");
+  var data = require("../data/rs500.json");
   // console.log(data);
 
   return (
