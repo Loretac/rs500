@@ -49,7 +49,10 @@ export default function ButtonAppBar(props) {
             <Typography color="#00ff00" variant="h6" component="div">
               Scroll to hide App bar
             </Typography>
-            <SelectSmall />
+            <SelectSmall
+              handleSortChange={props.handleSortChange}
+              sortBy={props.sortBy}
+            />
           </Toolbar>
         </AppBar>
       </HideOnScroll>
@@ -59,13 +62,13 @@ export default function ButtonAppBar(props) {
   );
 }
 
-function SelectSmall() {
-  const [age, setAge] = React.useState("");
+function SelectSmall({ handleSortChange, sortBy }) {
+  // const [age, setAge] = React.useState("");
 
-  const handleChange = (event) => {
-    setAge(event.target.value);
-    console.log(age);
-  };
+  // const handleChange = (event) => {
+  //   setAge(event.target.value);
+  //   console.log(age);
+  // };
 
   return (
     <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
@@ -73,17 +76,17 @@ function SelectSmall() {
       <Select
         labelId="demo-select-small-label"
         id="demo-select-small"
-        value={age}
+        value={sortBy}
         label="Sort"
-        onChange={handleChange}
+        onChange={handleSortChange}
       >
         <MenuItem value="">
           <em>None</em>
         </MenuItem>
-        <MenuItem value={10}>Rank (Ascending)</MenuItem>
-        <MenuItem value={20}>Rank (Descending)</MenuItem>
-        <MenuItem value={30}>Year (Ascending)</MenuItem>
-        <MenuItem value={30}>Year (Descending)</MenuItem>
+        <MenuItem value="rank-a">Rank (Ascending)</MenuItem>
+        <MenuItem value="rank-d">Rank (Descending)</MenuItem>
+        <MenuItem value="year-a">Year (Ascending)</MenuItem>
+        <MenuItem value="year-d">Year (Descending)</MenuItem>
       </Select>
     </FormControl>
   );
