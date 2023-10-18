@@ -26,6 +26,7 @@ function AlbumList() {
             rank={row.Rank}
             image={row["Image Link"]}
             key={row.Rank}
+            year={row.Year}
             apple={row["Apple Music Link"]}
           />
         ))}
@@ -34,7 +35,7 @@ function AlbumList() {
   );
 }
 
-function Album({ album, artist, rank, image, apple }) {
+function Album({ album, artist, rank, image, apple, year }) {
   return (
     <li className="row">
       <img
@@ -49,7 +50,9 @@ function Album({ album, artist, rank, image, apple }) {
       <div className="container">
         <div className="rank">{rank}</div>
         <div className="album-title">{album}</div>
-        <div className="artist">{artist}</div>
+        <div className="artist">
+          {artist} - {year}
+        </div>
         {apple && (
           <a className="apple-music-link" href={apple}>
             <img className="apple-music-btn" src={applemusicbtn} alt="apple" />
