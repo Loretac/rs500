@@ -19,12 +19,12 @@ export function App() {
     switch (event.target.value) {
       case "year-d":
         setSortedData((sortedData) =>
-          sortedData.sort((a, b) => b.Year - a.Year)
+          sortedData.sort((a, b) => b.Year - a.Year || a.Rank - b.Rank)
         );
         break;
       case "year-a":
         setSortedData((sortedData) =>
-          sortedData.sort((a, b) => a.Year - b.Year)
+          sortedData.sort((a, b) => a.Year - b.Year || a.Rank - b.Rank)
         );
         break;
       case "rank-a":
