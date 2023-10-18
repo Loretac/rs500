@@ -46,8 +46,8 @@ export default function ButtonAppBar(props) {
       <HideOnScroll {...props}>
         <AppBar>
           <Toolbar>
-            <Typography color="#00ff00" variant="h6" component="div">
-              Scroll to hide App bar
+            <Typography color="White" variant="h6" component="div">
+              Top 500 Albums
             </Typography>
             <SelectSmall
               handleSortChange={props.handleSortChange}
