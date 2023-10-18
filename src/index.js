@@ -1,64 +1,51 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import applemusicbtn from "./applemusicbtn.png"; // Tell webpack this JS file uses this image
 import "./styles.css";
+
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
+import IconButton from "@mui/material/IconButton";
+import MenuIcon from "@mui/icons-material/Menu";
+
+import AlbumList from "./components/AlbumList";
 
 // https://csvjson.com/csv2json
 
 function App() {
-  return <AlbumList />;
+  return (
+    <>
+      <ButtonAppBar />
+      <AlbumList />
+    </>
+  );
 }
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<App />);
 
-function AlbumList() {
-  var data = require("./rs500.json");
-  // console.log(data);
-
+function ButtonAppBar() {
   return (
-    <div>
-      <ul>
-        {data.map((row) => (
-          <Album
-            album={row.Album}
-            artist={row.Artist}
-            rank={row.Rank}
-            image={row["Image Link"]}
-            key={row.Rank}
-            year={row.Year}
-            apple={row["Apple Music Link"]}
-          />
-        ))}
-      </ul>
-    </div>
-  );
-}
-
-function Album({ album, artist, rank, image, apple, year }) {
-  return (
-    <li className="row">
-      <img
-        className="album-cover"
-        src={
-          image
-            ? image
-            : "https://play-lh.googleusercontent.com/IeNJWoKYx1waOhfWF6TiuSiWBLfqLb18lmZYXSgsH1fvb8v1IYiZr5aYWe0Gxu-pVZX3"
-        }
-        alt="t"
-      />
-      <div className="container">
-        <div className="rank">{rank}</div>
-        <div className="album-title">{album}</div>
-        <div className="artist">
-          {artist} - {year}
-        </div>
-        {apple && (
-          <a className="apple-music-link" href={apple}>
-            <img className="apple-music-btn" src={applemusicbtn} alt="apple" />
-          </a>
-        )}
-      </div>
-    </li>
+    <Box sx={{ flexGrow: 1 }}>
+      <AppBar position="static">
+        <Toolbar>
+          <IconButton
+            size="large"
+            edge="start"
+            color="inherit"
+            aria-label="menu"
+            sx={{ mr: 2 }}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            News
+          </Typography>
+          <Button color="inherit">Login</Button>
+        </Toolbar>
+      </AppBar>
+    </Box>
   );
 }
